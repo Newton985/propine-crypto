@@ -4,19 +4,19 @@ This commandline application is used to read a csv file containing transactions,
 
 # Usage
 
-## `node index.js data.csv`
+#### `node index.js data.csv`
 
 return the latest portfolio value per token in USD
 
-## `node index.js -t <token> data.csv`
+#### `node index.js -t <token> data.csv`
 
 return the latest portfolio value for the provided token in USD e.g `node index.js -t BTC data.csv`
 
-## `node index.js -d <yyyy/mm/dd> data.csv`
+#### `node index.js -d <yyyy/mm/dd> data.csv`
 
 return the portfolio value per token in USD on the given date
 
-## `node index.js -t <token> -d <yyyy/mm/dd> data.csv`
+#### `node index.js -t <token> -d <yyyy/mm/dd> data.csv`
 
  return the portfolio value of provided token in USD on the given date
 
