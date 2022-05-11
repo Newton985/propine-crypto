@@ -25,7 +25,7 @@ return the portfolio value per token in USD on the given date
 
 [Commander](https://www.npmjs.com/package/commander) is used for parsing the command-line arguments into options and command-arguments, displaying usage errors for problems, and implementing a help system.
 
-Node's `fs` is used to read the file, specifically using `fs.createReadStream()` which reads data in specified size of chucks i.e `bufferSize`. It's set to 10MB in the code. This is more memory efficient, and faster than `fs.readFile()` which loads the whole file into memory, taking into account that the file to be read is quite large.
+Node's `fs` is used to read the file, specifically using `fs.createReadStream()` which reads data in specified size of chucks i.e `bufferSize`. It's set to 100MB in the code (can be increased for faster read, depending on available memory). This is more memory efficient, and faster than `fs.readFile()` which loads the whole file into memory, taking into account that the file to be read is quite large.
 
 For each chuck of data read, it's piped through `csv()` parser which outputs a javascript object representation for each line. 
 
