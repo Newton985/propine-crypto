@@ -39,7 +39,7 @@ const options = program.opts();
 
 let token: string = options.token
 let date: string = options.date
-let compareTimeStamp: number = +new Date() //today timestamp
+let compareTimeStamp: number = +new Date() //now timestamp in millis 
 
 //check if token is supplied, if so, check if valid
 if (token) {
@@ -90,7 +90,9 @@ if (!filePath) {
   let ethPortfolio = 0;
   let xrpPortfolio = 0;
 
-  fs.createReadStream(filePath)
+  fs.createReadStream(filePath, {
+    'bufferSize': 100000 * 1024     // read up to 100MB of data at a time
+  })
     .pipe(csv())
     .on('data', (lineData: any) => {
 
